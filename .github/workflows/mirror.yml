@@ -4,10 +4,13 @@ on: [push, delete] # Runs whenever you push new code or delete a branch
 
 jobs:
   git-mirror:
+    if: github.repository == 'Razgaleh/Arrow-NetApp-Enterprise-RAG'
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0 # Fetches all history for all branches and tags
           persist-credentials: false # Prevent checkout token from overriding mirror auth
