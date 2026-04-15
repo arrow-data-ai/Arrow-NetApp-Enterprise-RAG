@@ -15,6 +15,4 @@ jobs:
         uses: pixta-dev/repository-mirroring-action@v1
         with:
           # Replace with your destination repo URL
-          target_repo_url: https://github.com/arrow-data-ai/Arrow-NetApp-Enterprise-RAG
-          # Use the secret you created in Step 3
-          target_token: ${{ secrets.MIRROR_TOKEN }}
+          target_repo_url: https://x-access-token:${{ secrets.MIRROR_TOKEN }}@github.com/arrow-data-ai/Arrow-NetApp-Enterprise-RAG.git
